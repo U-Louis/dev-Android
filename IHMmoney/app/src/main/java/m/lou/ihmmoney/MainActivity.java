@@ -35,11 +35,15 @@ public class MainActivity extends AppCompatActivity {
             Spinner sprOut = (Spinner) findViewById(R.id.sprOut);
             String strOut = (String) sprOut.getSelectedItem();
 
+            try{
             EditText inputAmount = (EditText) findViewById(R.id.inputAmount);
             String strAmount = inputAmount.getText().toString();
             double dblAmount = Double.parseDouble(strAmount); //or Double.valueOf(strAmount);
             //or double t = Double.parseDouble(((EditText) findViewById(R.id.inputAmount)).getText().toString());
-
+            }
+            catch (Exception e){
+                Toast.makeText( getBaseContext(), "@string/missingInput", Toast.LENGTH_SHORT).show();
+            }
 
         //TEST inputs
             if(strIn.equals("") || (strOut.equals(""))){
