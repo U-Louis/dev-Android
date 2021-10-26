@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">IHM money</string>
+    <string-array name="liste_devises">
+        <item>Livre</item>
+        <item>Euro</item>
+        <item>Dollar</item>
+    </string-array>
+</resources>
