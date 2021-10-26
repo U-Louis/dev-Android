@@ -1,8 +1,17 @@
 <resources>
+<!-- MAIN -->
     <string name="app_name">IHM money</string>
+    <string name="deviseDepart">devise de départ</string>
+    <string name="deviseArrivee">devise d\'arrivée</string>
+    <string name="montant">montant</string>
+    <string name="convertir">convertir</string>
+    <string name="quitter">quitter</string>
+<!--  Erreurs  -->
+    <string name="missingInput">Renseigner tous les champs</string>
+
     <string-array name="liste_devises">
-        <item>Livre</item>
-        <item>Euro</item>
-        <item>Dollar</item>
+        <item>livre</item>
+        <item>euro</item>
+        <item>dollar</item>
     </string-array>
 </resources>

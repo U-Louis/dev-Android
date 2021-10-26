@@ -3,68 +3,80 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
-
+    android:orientation="vertical"
+    android:padding="30dp"
+    >
 
     <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        >
+        <TextView
+            android:layout_width="250dp"
             android:layout_height="50dp"
-            />
+            android:layout_weight="1"
+            android:text="@string/deviseDepart" />
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_weight="1"
             android:entries="@array/liste_devises"
             />
-
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <EditText
-            android:layout_width="match_parent"
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+
+        >
+        <TextView
+            android:layout_width="250dp"
             android:layout_height="50dp"
-            />
+            android:layout_weight="1"
+            android:text="@string/deviseArrivee" />
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_weight="1"
             android:entries="@array/liste_devises"
             />
-
     </LinearLayout>
 
 
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="50dp"
+        android:layout_gravity="center"
         android:inputType="number"
-        android:hint="Montant"
+        android:hint="@string/montant"
+        android:fontFamily="@font/mario"
         />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_gravity="center"
+
+        >
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="?android:attr/buttonBarButtonStyle"
-            android:text="Convertir" />
+            android:text="@string/convertir"
+
+            />
 
         <Button
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="?android:attr/buttonBarButtonStyle"
-            android:text="Quitter" />
+            android:text="@string/quitter" />
     </LinearLayout>
 
 
