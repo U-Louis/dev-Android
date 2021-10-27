@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="30dp"
-    android:background="@drawable/treasureroom"
     >
 
     <LinearLayout
@@ -20,6 +19,7 @@
             android:layout_weight="1"
             android:text="@string/deviseDepart" />
         <Spinner
+            android:id="@+id/sprIn"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_weight="1"
@@ -40,6 +40,7 @@
             android:layout_weight="1"
             android:text="@string/deviseArrivee" />
         <Spinner
+            android:id="@+id/sprOut"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_weight="1"
@@ -66,17 +67,20 @@
         >
 
         <Button
+            android:id="@+id/btnConvert"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="?android:attr/buttonBarButtonStyle"
-            android:text="@string/convertir"
-
+            android:onClick="convert"
+            android:text="@string/convertir" />
             />
 
         <Button
-            style="?android:attr/buttonBarButtonStyle"
+            android:id="@+id/btnQuit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            style="?android:attr/buttonBarButtonStyle"
+            android:onClick="quit"
             android:text="@string/quitter" />
     </LinearLayout>
 

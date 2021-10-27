@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    android:background="@drawable/treasureroom"
+    android:background="@drawable/seanpatch"
     >
 
 
@@ -83,6 +83,12 @@
             android:onClick="quit"
             android:text="@string/quitter" />
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goToNextActivity"
+        android:text="go to next activity" />
 
 
 </LinearLayout>
