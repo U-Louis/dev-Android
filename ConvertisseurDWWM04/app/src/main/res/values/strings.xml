@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Convertisseur.3.5</string>
+    <string name="app_name">Convertisseur.5.3</string>
 
     <!-- MainActivity -->
     <string name="dev_dep">Devise de départ</string>
@@ -18,6 +18,13 @@
     <string name="err_request_code">"Request Code" inconnu</string>
     <string name="err_result_code">"Result Code" inconnu</string>
 
+    <!-- Menu Main -->
+    <string name="action_convert">Convertir</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="action_langage">Changer la langue</string>
+    <string name="action_date">Changer la date</string>
+    <string name="action_display">Changer l\'affichage</string>
+    <string name="action_quitter">Quitter</string>
 
     <!-- Liste des devises pour les Spinners  -->
     <!--    <string-array name="liste_devises">

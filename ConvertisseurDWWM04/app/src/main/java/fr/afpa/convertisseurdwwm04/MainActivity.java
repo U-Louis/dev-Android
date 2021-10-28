@@ -5,7 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
+import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -44,11 +49,15 @@ public class MainActivity extends AppCompatActivity {
         chargeDevise();
         chargeSpinner(R.id.spDevDep);
         chargeSpinner(R.id.spDevArr);
+
+        // Ajout d'un menu contextuel
+        registerForContextMenu(findViewById(R.id.imgMenu));
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        Log.i(MainActivity.TAG, "onActivityResult");
 
         switch (requestCode) {
             case MainActivity.REQUEST_CODE:
@@ -63,6 +72,60 @@ public class MainActivity extends AppCompatActivity {
             default:
                 Toast.makeText(this,R.string.err_request_code,Toast.LENGTH_SHORT).show();
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        Log.i(MainActivity.TAG, "onCreateOptionsMenu");
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Log.i(MainActivity.TAG, "onCreateOptionsMenu");
+
+        // On récupère l'item cliqué comme instance de View
+        View vItem = (View) item.getActionView(); // Compatible depuis l'API 11
+
+        // On teste l’Id de l’item cliqué et on déclenche une action
+        switch (item.getItemId()) {
+            case R.id.action_convert:
+                clicConvertir(vItem); // On fournit l'item en paramètre
+                return true;
+            case R.id.action_langage:
+                Intent changerLangue = new Intent(Settings.ACTION_LOCALE_SETTINGS);
+                startActivity(changerLangue);
+                return true;
+            case R.id.action_date:
+                Intent changerDate = new Intent(Settings.ACTION_DATE_SETTINGS);
+                startActivity(changerDate);
+                return true;
+            case R.id.action_display:
+                Intent changerAffichage = new Intent(Settings.ACTION_DISPLAY_SETTINGS);
+                startActivity(changerAffichage);
+                return true;
+            case R.id.action_quitter:
+                clicQuitter(vItem); // On fournit l'item en paramètre
+                return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        Log.i(MainActivity.TAG, "onCreateOptionsMenu");
+        super.onCreateContextMenu(menu, v, menuInfo);
+        MenuInflater inflater = getMenuInflater();
+        // XML décrivant les options du menu contextuel
+        inflater.inflate(R.menu.menu_main, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        Log.i(MainActivity.TAG, "onContextItemSelected");
+        this.onOptionsItemSelected(item);
+        return super.onContextItemSelected(item);
     }
 
     // ---------------------------
