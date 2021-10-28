@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="m.lou.ihmmoney">
+    package="fr.afpa.convertisseurdwwm04">
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_treasure"
+        android:icon="@mipmap/ic_convertisseur"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_treasure_round"
+        android:roundIcon="@mipmap/ic_convertisseur_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".doMyMaths"></activity>
-        <activity
-            android:name=".nextActivity"
-            android:label="@string/title_activity_next"
-            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ConvertARActivity" />
+        <activity android:name=".ConvertActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

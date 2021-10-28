@@ -1,0 +1,100 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Afpa_land">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lblDevDep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dev_dep"
+            android:textSize="40dp"
+            android:textColor="@color/red"
+            app:fontFamily="@font/arizonia" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/spDevDep"
+            android:background="@color/violet"
+            android:popupBackground="@color/violet" />
+        <!-- android:entries="@array/liste_devises" /> -->
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lblDevArr"
+            android:text="@string/dev_arr"
+            android:textSize="40dp"
+            android:textColor="@color/red"
+            app:fontFamily="@font/arizonia"
+            />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/spDevArr"
+            android:background="@color/violet"
+            android:popupBackground="@color/violet" />
+        <!-- android:entries="@array/liste_devises" /> -->
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lblMontant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/edt_montant"
+            android:textSize="40dp"
+            android:textColor="@color/red"
+            app:fontFamily="@font/arizonia" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/edtMontant"
+            android:inputType="numberDecimal"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnConvert"
+            android:text="@string/btn_convert"
+            android:onClick="clicConvertir"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnConvertAR"
+            android:text="@string/btn_convert_ar"
+            android:onClick="clicConvertirAR"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnQuitter"
+            android:text="@string/btn_quit"
+            android:onClick="clicQuitter"
+            />
+    </LinearLayout>
+
+</LinearLayout>

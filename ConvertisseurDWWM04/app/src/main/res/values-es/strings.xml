@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Convertidor.3.5</string>
+
+    <!-- MainActivity -->
+    <string name="dev_dep">moneda inicial</string>
+    <string name="dev_arr">moneda final</string>
+    <string name="edt_montant">Cantidad</string>
+    <string name="btn_convert">Converti</string>
+    <string name="btn_convert_ar">Converti (AR)</string>
+    <string name="btn_quit">Dejar</string>
+
+    <string name="msg_resultat">La conversion vale</string>
+    <string name="msg_quitter">Hasta pronto</string>
+    <string name="err_dev_dep">moneda inicial requerida</string>
+    <string name="err_dev_arr">moneda final requerida</string>
+    <string name="err_identique">Seleccione 2 monedas diferentes !</string>
+    <string name="err_montant">Cantidad requerida</string>
+    <string name="err_request_code">"Request Code" desconocido</string>
+    <string name="err_result_code">"Result Code" desconocido</string>
+
+
+    <!-- Liste des devises pour les Spinners  -->
+<!--    <string-array name="liste_devises">
+        <item></item>
+        <item>Livre</item>
+        <item>Dirham</item>
+        <item>Dollars US</item>
+        <item>Euro</item>
+        <item>Francs CFA</item>
+        <item>Yen</item>
+    </string-array> -->
+
+    <!-- ConvertActivity -->
+    <string name="lbl_resultat">La conversion vale</string>
+    <string name="btn_retour">Regreso</string>
+</resources>

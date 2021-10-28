@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Afpa">
+
+    <TextView
+        android:id="@+id/tvLblResultat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/darkslateblue"
+        android:textSize="30dp"
+        android:text="@string/lbl_resultat" />
+
+    <TextView
+        android:id="@+id/tvValueResultat"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:textColor="@color/darkslateblue"
+        android:textSize="30dp"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnRetour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/btn_retour"
+        android:textSize="30dp"
+        android:onClick="clicRetour" />
+</LinearLayout>

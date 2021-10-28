@@ -5,6 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
+    android:background="@color/colorAccent"
+
     >
 
 
@@ -70,7 +72,6 @@
             android:id="@+id/btnConvert"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="?android:attr/buttonBarButtonStyle"
             android:onClick="convert"
             android:text="@string/convertir" />
 
@@ -78,7 +79,6 @@
             android:id="@+id/btnQuit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="?android:attr/buttonBarButtonStyle"
             android:onClick="quit"
             android:text="@string/quitter" />
     </LinearLayout>
@@ -88,6 +88,11 @@
         android:layout_height="wrap_content"
         android:onClick="goToNextActivity"
         android:text="go to next activity" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goToDoMyMaths"
+        android:text="go to next activity and come back" />
 
 
 </LinearLayout>
