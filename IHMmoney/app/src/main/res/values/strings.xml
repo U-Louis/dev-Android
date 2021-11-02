@@ -6,6 +6,7 @@
     <string name="montant">montant</string>
     <string name="convertir">convertir</string>
     <string name="quitter">quitter</string>
+    <string name="options">Options</string>
     <!--  Erreurs  -->
     <string name="missingInput">Renseigner tous les champs</string>
 

@@ -4,8 +4,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -14,6 +18,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         public final static String DEVISE_ARRIVEE = "out";
         public final static String MONTANT = "amount";
         public final static int REQUEST_CODE = 1;
+        public final static String PREFS = "devisesSet";
 
         private String strIn = null;
         private String strOut = null;
@@ -34,11 +40,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Init data from persistence layer
+            SharedPreferences CurPrefs = getSharedPreferences(PREFS, MODE_PRIVATE);
+            this.strIn = CurPrefs.getString("in", "");
+            this.strOut = CurPrefs.getString("out", "");
+            this.dblAmount = new Double(CurPrefs.getFloat("amount", 0.0f));
+Log.i(TAG, String.valueOf(dblAmount));
+
+        // MAJ le montant
+        EditText edtAmount = (EditText) findViewById(R.id.inputAmount);
+        edtAmount.setText(this.dblAmount.toString());
+Log.i(TAG, String.valueOf(edtAmount.getText()));
+
         //Init spinners
             chargeDevise(Convert.getConversionTable());
-            chargeSpinner(R.id.sprIn);
-            chargeSpinner(R.id.sprOut);
-
+            chargeSpinner(R.id.sprIn, this.strIn );
+            chargeSpinner(R.id.sprOut, this.strOut);
     }
 
     @Override
@@ -60,6 +77,33 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu)
+//    {
+//        Log.i("Mainactivity", "oncreateOptionmenu");
+//        MenuInflater inflater = getMenuInflater();
+//        inflater.inflate(R.menu.menu_main, menu);
+//        return true;
+//    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Log.i("Mainactivity", "onOption");
+
+/*        switch (item.getItemId()) {
+            case R.id.item1:
+                // action 1
+                return true;
+            case R.id.item2:
+                // action 2
+                return true;
+            case R.id.item3:
+                // action 3
+                return true;
+        }*/
+        return false;
+    }
+
     /*----------------------- METHODS ---------------------------------*/
 
     public void goToNextActivity(View view){
@@ -68,13 +112,18 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void chargeSpinner(int idSpinner){
+    private void chargeSpinner(int idSpinner, String devise){
         //Init
             Spinner spinner = (Spinner) findViewById(idSpinner);
             final ArrayAdapter adapter = new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_spinner_item , this.listeDevises);
 
         //Set
-        spinner.setAdapter(adapter);
+            spinner.setAdapter(adapter);
+
+        //get init pos
+            int pos = adapter.getPosition(devise);
+            if (pos<0 || pos > spinner.getCount()) pos =0;
+            spinner.setSelection(pos);
     }
 
     private void chargeDevise(Map<String, Double> arr){
@@ -117,12 +166,19 @@ public class MainActivity extends AppCompatActivity {
                 }
             else{
                 try{
-                    double dblAmount = Double.parseDouble(strAmount); //or Double.valueOf(strAmount);
+                    this.dblAmount = Double.parseDouble(strAmount); //or Double.valueOf(strAmount);
                     //or double t = Double.parseDouble(((EditText) findViewById(R.id.inputAmount)).getText().toString());
                     double t = (Convert.convertir(strIn, strOut, dblAmount));
                     String res = Double.toString(t);
                     Toast.makeText(getBaseContext(), (String) res, Toast.LENGTH_LONG).show();
 
+                    //output to prefs
+                        SharedPreferences CurPrefs = getSharedPreferences(PREFS, MODE_PRIVATE);
+                        SharedPreferences.Editor temp = CurPrefs.edit();
+                        temp.putString("in", strIn);
+                        temp.putString("out", strOut);
+                        temp.putFloat("amount", new Float(this.dblAmount));
+                        temp.apply();
                 }
                 catch (Exception e){
                     Toast.makeText( getBaseContext(), R.string.missingInput, Toast.LENGTH_SHORT).show();
@@ -135,8 +191,6 @@ public class MainActivity extends AppCompatActivity {
      * @param v
      */
     public void quit(View v){
-//        Log.d(TAG, "btn quit clicked");
-//        Toast.makeText(getBaseContext(), "quit clicked", Toast.LENGTH_SHORT).show();
         System.exit(0);
     }
 

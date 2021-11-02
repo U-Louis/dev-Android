@@ -7,7 +7,9 @@
     <string name="montant">amount</string>
     <string name="convertir">convert</string>
     <string name="quitter">quit</string>
-<!--  Errors  -->
+    <string name="options">Options</string>
+
+    <!--  Errors  -->
     <string name="missingInput">Fill all inputs</string>
 
     <string-array name="liste_devises">
