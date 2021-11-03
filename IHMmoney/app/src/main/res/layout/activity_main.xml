@@ -88,7 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="goToNextActivity"
-        android:text="go to next activity" />
+        android:text="Devises manager" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

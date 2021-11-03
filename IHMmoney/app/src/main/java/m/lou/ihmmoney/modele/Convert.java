@@ -1,6 +1,10 @@
-package m.lou.ihmmoney;
+package m.lou.ihmmoney.modele;
+
+import android.content.Context;
 
 import java.util.*;
+
+import m.lou.ihmmoney.BddDevises;
 
 /**
  * Classe de conversion de devises
@@ -11,6 +15,7 @@ public class Convert
 {
     //private static Map conversionTable = new HashMap();
     private static Map<String, Double> conversionTable = new HashMap<String, Double>();
+
 
     // static fonctionne comme un constructeur dans une classe static
     static
@@ -42,8 +47,9 @@ public class Convert
      * Accesseur du tableau associatif des devises
      * @return une référence sur la table des devises
      */
-    public static Map<String, Double> getConversionTable()
+    public static Map<String, Double> getConversionTable(Context context)
     {
+        conversionTable.putAll(DevisesMgr.getAll(context));
         return conversionTable;
     }
 }

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import m.lou.ihmmoney.modele.Convert;
+
 public class doMyMaths extends AppCompatActivity {
 
     public final static int RESULT_CODE = 1;

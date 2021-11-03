@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".doMyMaths"></activity>
         <activity
-            android:name=".nextActivity"
+            android:name=".devisesManager"
             android:label="@string/title_activity_next"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">

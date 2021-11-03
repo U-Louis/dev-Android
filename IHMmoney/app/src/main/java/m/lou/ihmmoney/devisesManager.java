@@ -3,16 +3,13 @@ package m.lou.ihmmoney;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
-import android.view.View;
 import android.widget.Toast;
 
-public class nextActivity extends AppCompatActivity {
+import m.lou.ihmmoney.modele.DevisesMgr;
+
+public class devisesManager extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +25,15 @@ public class nextActivity extends AppCompatActivity {
             Toast.makeText(getBaseContext(), "intent param not received : " + e, Toast.LENGTH_SHORT).show();
         }
 
+/*
+        chargeSpinner(R.id.sprIn, this.strIn );
+*/
 
+
+        DevisesMgr bddMgrInstance = new DevisesMgr();
+        bddMgrInstance.addDevise("cacahuete", 0.45, this);
+
+        // Test
+        bddMgrInstance.getAll(this);
     }
 }

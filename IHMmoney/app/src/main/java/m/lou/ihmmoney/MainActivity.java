@@ -7,8 +7,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -18,6 +16,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
+
+import m.lou.ihmmoney.modele.Convert;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -53,7 +53,7 @@ Log.i(TAG, String.valueOf(dblAmount));
 Log.i(TAG, String.valueOf(edtAmount.getText()));
 
         //Init spinners
-            chargeDevise(Convert.getConversionTable());
+            chargeDevise(Convert.getConversionTable(this));
             chargeSpinner(R.id.sprIn, this.strIn );
             chargeSpinner(R.id.sprOut, this.strOut);
     }
@@ -107,7 +107,7 @@ Log.i(TAG, String.valueOf(edtAmount.getText()));
     /*----------------------- METHODS ---------------------------------*/
 
     public void goToNextActivity(View view){
-        Intent intent = new Intent(this, nextActivity.class);
+        Intent intent = new Intent(this, devisesManager.class);
         intent.putExtra("hello","hello nextActivity");
         startActivity(intent);
     }
