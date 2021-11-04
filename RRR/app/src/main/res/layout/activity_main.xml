@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_z1"
-    tools:context=".FullscreenActivity"
+    android:background="@drawable/bg"
+
     >
 
     <!-- GLOBAL FRAME -->
@@ -32,13 +33,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="25"
+                android:orientation="vertical"
+                android:weightSum="100"
                 >
-                <TextView
+                <Button
+                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="BOARD_side"
+                    android:layout_weight="30"
+                    tools:ignore="NestedWeights"
+                    android:text="Menu"
                     >
-                </TextView>
+                </Button>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="70"
+                    android:layout_gravity="bottom">
+
+                    <ImageView
+                        android:padding="10dp"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/discard"
+                        />
+
+                </LinearLayout>
+
             </LinearLayout>
 
             <!-- BOARD_arena -->
@@ -47,16 +67,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="75"
+                android:padding="10dp"
                 android:orientation="horizontal">
-                <TextView
-                    android:layout_width="match_parent"
+
+                <LinearLayout
+                    android:id="@+id/frame_board_arena_inside"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:text="BOARD_arena"
-                    >
-                </TextView>
+                    android:layout_weight="1"
+                    android:background="@drawable/boardarena"
+                    android:orientation="horizontal">
+
+                    <GridView
+                        android:id="@+id/arena_grid"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:numColumns="3"
+                        android:gravity="center"
+                        android:stretchMode="columnWidth"
+                        >
+                    </GridView>
+
+                </LinearLayout>
             </LinearLayout>
 
-    </LinearLayout>
+        </LinearLayout>
 
 
         <!-- HAND -->
@@ -73,19 +108,22 @@
 
             <!-- HAND_neutrals -->
             <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="33"
-                    android:background="@drawable/border"
-                    >
-                <TextView
-                    android:layout_width="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="33"
+                android:background="@drawable/border"
+                >
+                <GridView
+                    android:id="@+id/neutrals_grid"
                     android:layout_height="match_parent"
-                    android:text="HAND_neutrals"
+                    android:layout_width="match_parent"
+                    android:numColumns="5"
+                    android:gravity="center"
+                    android:stretchMode="columnWidth"
                     >
-                </TextView>
-                </LinearLayout>
+                </GridView>
+            </LinearLayout>
 
             <!-- HAND_up -->
             <LinearLayout

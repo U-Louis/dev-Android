@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+
+    >
+
+    <!-- GLOBAL FRAME -->
+    <LinearLayout
+        android:id="@+id/global_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="100"
+        >
+
+        <!-- BOARD -->
+        <LinearLayout
+            android:id="@+id/frame_board"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="50"
+            android:fitsSystemWindows="true"
+            android:orientation="horizontal"
+            >
+
+            <!-- BOARD_side -->
+            <LinearLayout
+                android:id="@+id/frame_board_side"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:orientation="vertical"
+                android:weightSum="100"
+                >
+                <Button
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_weight="30"
+                    tools:ignore="NestedWeights"
+                    android:text="Menu"
+                    >
+                </Button>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="70"
+                    android:layout_gravity="bottom">
+
+                    <ImageView
+                        android:padding="10dp"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/discard"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- BOARD_arena -->
+            <LinearLayout
+                android:id="@+id/frame_board_arena"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="75"
+                android:padding="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/frame_board_arena_inside"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/boardarena"
+                    android:orientation="horizontal">
+
+                    <GridView
+                        android:id="@+id/arena_grid"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:padding="5dp"
+                        android:numColumns="3"
+                        android:gravity="center"
+                        android:stretchMode="columnWidth"
+                        >
+                    </GridView>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <!-- HAND -->
+        <LinearLayout
+            android:id="@+id/frame_hand"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:layout_weight="50"
+            android:weightSum="99"
+            >
+<!--
+            android:background="@drawable/border"
+-->
+
+
+            <!-- HAND_neutrals -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="33"
+                >
+<!--
+                android:background="@drawable/border"
+-->
+
+           <GridView
+                    android:id="@+id/neutrals_grid"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:numColumns="5"
+                    android:gravity="center"
+                    android:stretchMode="columnWidth"
+                    >
+                </GridView>
+            </LinearLayout>
+
+            <!-- HAND -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="66"
+                >
+                <GridView
+                    android:id="@+id/p1hand_grid"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:numColumns="5"
+                    android:gravity="center"
+                    android:stretchMode="columnWidth"
+                    android:listSelector="#0f0"
+                    >
+                </GridView>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</FrameLayout>
