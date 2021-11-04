@@ -31,21 +31,23 @@ public class MainActivity extends AppCompatActivity {
     GridView p1Hand_grid;
     int p1HandCards[] = {
             R.drawable.citizen,
-            R.drawable.citizen,
+            R.drawable.king,
+            R.drawable.queen,
+            R.drawable.princess,
+            R.drawable.minister,
+            R.drawable.general,
+            R.drawable.sorcerer,
+            R.drawable.castle
+
+    };
+
+    GridView neutrals_grid;
+    int neutralsDeck[] = {
             R.drawable.citizen,
             R.drawable.citizen,
             R.drawable.citizen,
             R.drawable.citizen,
             R.drawable.citizen
-    };
-
-    GridView neutrals_grid;
-    int neutralsDeck[] = {
-            R.drawable.empty,
-            R.drawable.empty,
-            R.drawable.empty,
-            R.drawable.empty,
-            R.drawable.empty
     };
 
 
