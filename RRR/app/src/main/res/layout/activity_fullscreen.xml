@@ -3,49 +3,122 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/fullscreenBackgroundColor"
-    android:theme="@style/ThemeOverlay.RRR.FullscreenContainer"
-    tools:context=".FullscreenActivity">
+    android:background="@drawable/bg_z1"
+    tools:context=".FullscreenActivity"
+    >
 
-    <!-- The primary full-screen view. This can be replaced with whatever view
-         is needed to present your content, e.g. VideoView, SurfaceView,
-         TextureView, etc. -->
-    <TextView
-        android:id="@+id/fullscreen_content"
+    <!-- GLOBAL FRAME -->
+    <LinearLayout
+        android:id="@+id/global_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:keepScreenOn="true"
-        android:text="@string/dummy_content"
-        android:textColor="?attr/fullscreenTextColor"
-        android:textSize="50sp"
-        android:textStyle="bold" />
+        android:orientation="vertical"
+        android:weightSum="100"
+        >
 
-    <!-- This FrameLayout insets its children based on system windows using
-         android:fitsSystemWindows. -->
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
-
+        <!-- BOARD -->
         <LinearLayout
-            android:id="@+id/fullscreen_content_controls"
-            style="@style/Widget.Theme.RRR.ButtonBar.Fullscreen"
+            android:id="@+id/frame_board"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
+            android:layout_height="0dp"
+            android:layout_weight="50"
+            android:fitsSystemWindows="true"
             android:orientation="horizontal"
-            tools:ignore="UselessParent">
+            >
 
-            <Button
-                android:id="@+id/dummy_button"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="0dp"
+            <!-- BOARD_side -->
+            <LinearLayout
+                android:id="@+id/frame_board_side"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="BOARD_side"
+                    >
+                </TextView>
+            </LinearLayout>
+
+            <!-- BOARD_arena -->
+            <LinearLayout
+                android:id="@+id/frame_board_arena"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="75"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="BOARD_arena"
+                    >
+                </TextView>
+            </LinearLayout>
+
+    </LinearLayout>
+
+
+        <!-- HAND -->
+        <LinearLayout
+            android:id="@+id/frame_hand"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:layout_weight="50"
+            android:weightSum="99"
+            android:background="@drawable/border"
+            >
+
+            <!-- HAND_neutrals -->
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="33"
+                    android:background="@drawable/border"
+                    >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="HAND_neutrals"
+                    >
+                </TextView>
+                </LinearLayout>
+
+            <!-- HAND_up -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/dummy_button" />
+                android:orientation="vertical"
+                android:layout_weight="33"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="HAND_up"
+                    >
+                </TextView>
+            </LinearLayout>
+
+            <!-- HAND_down -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="33"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="HAND_down"
+                    >
+                </TextView>
+            </LinearLayout>
 
         </LinearLayout>
-    </FrameLayout>
+    </LinearLayout>
+
 
 </FrameLayout>
