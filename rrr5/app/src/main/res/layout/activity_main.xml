@@ -40,7 +40,8 @@
                     android:layout_height="250sp"
                     android:layout_weight="30"
                     android:text="M\ne\nn\nu"
-                    tools:ignore="NestedWeights" />
+                    tools:ignore="NestedWeights"
+                    android:onClick="showMenu"/>
 
                 <ImageView
                     android:layout_width="match_parent"
