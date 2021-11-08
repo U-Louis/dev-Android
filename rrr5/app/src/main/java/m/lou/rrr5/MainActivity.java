@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
 
     public Card selectedCard;
 
-    GridView Arena_grid;
     int ArenaCards[] = {
             R.drawable.empty,
             R.drawable.empty,
@@ -25,10 +24,8 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.empty,
             R.drawable.empty,
             R.drawable.empty
-            //...ArenaCards imgs
     };
 
-    GridView p1Hand_grid;
     int p1HandCards[] = {
             R.drawable.citizen,
             R.drawable.king,
@@ -41,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
 
     };
 
-    GridView neutrals_grid;
     int neutralsDeck[] = {
             R.drawable.citizen,
             R.drawable.citizen,
@@ -58,9 +54,11 @@ public class MainActivity extends AppCompatActivity {
 
         //Arena_grid
             //init
+/*
             Arena_grid = (GridView) findViewById(R.id.arena_grid);
+*/
 
-            //setup adapter
+/*           //setup adapter
             CardGridAdapter arenaCardGridAdapter = new CardGridAdapter(getApplicationContext(), ArenaCards);
             Arena_grid.setAdapter(arenaCardGridAdapter);
 
@@ -68,25 +66,20 @@ public class MainActivity extends AppCompatActivity {
             Arena_grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    //TODO
                 }
-            });
+            });*/
 
         //p1Hand_grid
             //init
-            p1Hand_grid = (GridView) findViewById(R.id.p1hand_grid);
 
             //setup adapter
-            CardGridAdapter p1handCardGridAdapter = new CardGridAdapter(getApplicationContext(), p1HandCards);
-            p1Hand_grid.setAdapter(p1handCardGridAdapter);
+
 
         //neutrals_grid
             //init
-            neutrals_grid = (GridView) findViewById(R.id.neutrals_grid);
 
             //setup adapter
-            CardGridAdapter neutralsGridAdapter = new CardGridAdapter(getApplicationContext(), neutralsDeck);
-            neutrals_grid.setAdapter(neutralsGridAdapter);
+
 
     }
 
