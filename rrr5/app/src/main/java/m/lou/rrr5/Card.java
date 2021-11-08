@@ -1,31 +1,69 @@
 package m.lou.rrr5;
 
-public class Card {
+import static android.provider.Settings.System.getString;
+
+import static androidx.core.graphics.drawable.IconCompat.getResources;
+
+import android.app.Application;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+public class Card  {
 
     private String name;
-    private Boolean empty;
+    private ImageView prop;
+    private String position;
 
-    public Card(String name, Boolean empty){
+    public Card(String name, String position) {
         this.name = name;
-        this.empty = empty;
+        this.prop = prop;
+        this.position = position;
     }
 
     /* SETTERS */
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
     }
 
-    public void setEmpty(Boolean empty){
-        this.empty = empty;
+    public void setProp(ImageView prop) {
+        switch (this.name) {
+            case "king":
+                this.prop.setImageResource(R.drawable.king);
+                break;
+            case "queen":
+                this.prop.setImageResource(R.drawable.queen);
+                break;
+
+            default:
+                this.prop.setImageResource(R.drawable.empty);
+        }
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 
     /* GETTERS */
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public Boolean getEmpty(){
-        return empty;
+    public ImageView getProp() {
+        return prop;
     }
+
+    public String getPosition() {
+        return position;
+    }
+
+    //METHODS
+    public void moveCard(String position){
+//TODO
+
+        /*           //                              //
+        MainActivity.h0.setImageResource(R.drawable.king);break;*/
+
+
+}
 
 }
