@@ -31,14 +31,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="25"
+                android:background="@drawable/border"
                 android:orientation="vertical"
+                android:padding="3dp"
                 android:weightSum="100">
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="250sp"
                     android:layout_weight="30"
-                    android:text="Menu"
+                    android:text="M\ne\nn\nu"
                     tools:ignore="NestedWeights" />
 
                 <ImageView
@@ -56,7 +58,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="75"
+                android:background="@drawable/border"
                 android:orientation="vertical"
+                android:padding="3dp"
                 android:weightSum="99">
 
                 <LinearLayout
@@ -64,6 +68,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="33"
+                    android:paddingVertical="3dp"
+                    android:paddingHorizontal="20dp"
                     android:orientation="horizontal"
                     android:weightSum="99">
 
@@ -93,6 +99,8 @@
                     android:id="@+id/frame_board_arena_centerline"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:paddingVertical="3dp"
+                    android:paddingHorizontal="20dp"
                     android:layout_weight="33"
                     android:orientation="horizontal">
 
@@ -123,6 +131,8 @@
                     android:id="@+id/frame_board_arena_botline"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:paddingVertical="3dp"
+                    android:paddingHorizontal="20dp"
                     android:layout_weight="33"
                     android:orientation="horizontal">
 
@@ -159,6 +169,7 @@
             android:layout_height="0dp"
             android:layout_gravity="bottom"
             android:layout_weight="50"
+            android:background="@drawable/border"
             android:orientation="vertical"
             android:weightSum="3">
 
@@ -168,7 +179,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
+                android:background="@drawable/border"
                 android:orientation="horizontal"
+                android:paddingVertical="5dp"
                 android:weightSum="5">
 
                 <ImageView
@@ -214,6 +227,8 @@
                 android:layout_gravity="bottom"
                 android:layout_weight="2"
                 android:orientation="vertical"
+                android:paddingVertical="5dp"
+
                 android:weightSum="2">
 
                 <!-- Hand player topline -->
@@ -289,13 +304,22 @@
                         android:layout_weight="1"
                         app:srcCompat="@drawable/empty" />
 
-                    <Button
+                    <LinearLayout
+                        android:layout_height="100dp"
                         android:layout_width="0dp"
-                        android:layout_height="120dp"
-                        android:layout_weight="2"
                         android:layout_gravity="bottom"
-                        android:text="NExt"
+                        android:layout_weight="2"
+                        android:padding="5dp">
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="NEXT"
                         tools:ignore="NestedWeights" />
+
+
+
+                    </LinearLayout>
+
 
                 </LinearLayout>
             </LinearLayout>
