@@ -31,7 +31,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="25"
-                android:background="@drawable/border"
                 android:orientation="vertical"
                 android:padding="3dp"
                 android:weightSum="100">
@@ -58,7 +57,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="75"
-                android:background="@drawable/border"
                 android:orientation="vertical"
                 android:padding="3dp"
                 android:weightSum="99">
@@ -169,7 +167,6 @@
             android:layout_height="0dp"
             android:layout_gravity="bottom"
             android:layout_weight="50"
-            android:background="@drawable/border"
             android:orientation="vertical"
             android:weightSum="3">
 
@@ -179,7 +176,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:background="@drawable/border"
                 android:orientation="horizontal"
                 android:paddingVertical="5dp"
                 android:weightSum="5">
