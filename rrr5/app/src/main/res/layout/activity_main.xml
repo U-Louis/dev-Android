@@ -71,27 +71,61 @@
                     android:paddingHorizontal="20dp"
                     android:orientation="horizontal"
                     android:weightSum="99">
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
 
+                        <ImageView
+                            android:contentDescription="row"
+                            android:id="@+id/icon"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginRight="6dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:src="@drawable/king"
+                             >
+                        </ImageView>
+
+                        <TextView
+                            android:id="@+id/label"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="text"
+                            android:textSize="26sp" >
+                        </TextView>
+
+                    </LinearLayout>
                     <ImageView
-                        android:id="@+id/b0"
+                        android:id="@+id/deck_0board"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="33"
-                        app:srcCompat="@drawable/empty" />
+                        app:srcCompat="@drawable/empty"
+                        android:onClick="putCard"
+                        />
 
                     <ImageView
-                        android:id="@+id/b1"
+                        android:id="@+id/deck_1board"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="33"
-                        app:srcCompat="@drawable/empty" />
+                        app:srcCompat="@drawable/empty"
+                        android:onClick="putCard"
+                        />
 
                     <ImageView
-                        android:id="@+id/b2"
+                        android:id="@+id/deck_2board"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="33"
-                        app:srcCompat="@drawable/empty" />
+                        app:srcCompat="@drawable/empty"
+                        android:onClick="putCard"
+                        />
                 </LinearLayout>
 
                 <LinearLayout
@@ -104,25 +138,31 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/b3"
+                        android:id="@+id/deck_3board"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/empty" />
+                        app:srcCompat="@drawable/empty"
+                        android:onClick="putCard"
+                        />
 
                     <ImageView
-                        android:id="@+id/b4"
+                        android:id="@+id/deck_4board"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/empty" />
+                        app:srcCompat="@drawable/empty"
+                        android:onClick="putCard"
+                        />
 
                     <ImageView
-                        android:id="@+id/b5"
+                        android:id="@+id/deck_5board"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/empty" />
+                        app:srcCompat="@drawable/empty"
+                        android:onClick="putCard"
+                        />
 
                 </LinearLayout>
 
@@ -136,25 +176,31 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/b6"
+                        android:id="@+id/deck_6board"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/empty" />
+                        app:srcCompat="@drawable/empty"
+                        android:onClick="putCard"
+                        />
 
                     <ImageView
-                        android:id="@+id/b7"
+                        android:id="@+id/deck_7board"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/empty" />
+                        app:srcCompat="@drawable/empty"
+                        android:onClick="putCard"
+                        />
 
                     <ImageView
-                        android:id="@+id/b8"
+                        android:id="@+id/deck_8board"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/empty" />
+                        app:srcCompat="@drawable/empty"
+                        android:onClick="putCard"
+                        />
                 </LinearLayout>
 
             </LinearLayout>
@@ -182,39 +228,49 @@
                 android:weightSum="5">
 
                 <ImageView
-                    android:id="@+id/n0"
+                    android:id="@+id/deck_0neutrals"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/empty" />
+                    app:srcCompat="@drawable/empty"
+                    android:onClick="selectCard"
+                    />
 
                 <ImageView
-                    android:id="@+id/n1"
+                    android:id="@+id/deck_1neutrals"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/empty" />
+                    app:srcCompat="@drawable/empty"
+                    android:onClick="selectCard"
+                    />
 
                 <ImageView
-                    android:id="@+id/n2"
+                    android:id="@+id/deck_2neutrals"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/empty" />
+                    app:srcCompat="@drawable/empty"
+                    android:onClick="selectCard"
+                    />
 
                 <ImageView
-                    android:id="@+id/n3"
+                    android:id="@+id/deck_3neutrals"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/empty" />
+                    app:srcCompat="@drawable/empty"
+                    android:onClick="selectCard"
+                    />
 
                 <ImageView
-                    android:id="@+id/n4"
+                    android:id="@+id/deck_4neutrals"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/empty" />
+                    app:srcCompat="@drawable/empty"
+                    android:onClick="selectCard"
+                    />
             </LinearLayout>
 
             <!-- HAND PLAYER -->
@@ -237,39 +293,49 @@
                     android:weightSum="5">
 
                     <ImageView
-                        android:id="@+id/h0"
+                        android:id="@+id/deck_0player"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/empty" />
+                        app:srcCompat="@drawable/empty"
+                        android:onClick="selectCard"
+                        />
 
                     <ImageView
-                        android:id="@+id/h1"
+                        android:id="@+id/deck_1player"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/empty" />
+                        app:srcCompat="@drawable/empty"
+                        android:onClick="selectCard"
+                        />
 
                     <ImageView
-                        android:id="@+id/h2"
+                        android:id="@+id/deck_2player"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/empty" />
+                        app:srcCompat="@drawable/empty"
+                        android:onClick="selectCard"
+                        />
 
                     <ImageView
-                        android:id="@+id/h3"
+                        android:id="@+id/deck_3player"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/empty" />
+                        app:srcCompat="@drawable/empty"
+                        android:onClick="selectCard"
+                        />
 
                     <ImageView
-                        android:id="@+id/h4"
+                        android:id="@+id/deck_4player"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/empty" />
+                        app:srcCompat="@drawable/empty"
+                        android:onClick="selectCard"
+                        />
                 </LinearLayout>
 
                 <!-- Hand player botline -->
@@ -281,25 +347,31 @@
                     android:weightSum="5">
 
                     <ImageView
-                        android:id="@+id/h5"
+                        android:id="@+id/deck_5player"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/empty" />
+                        app:srcCompat="@drawable/empty"
+                        android:onClick="selectCard"
+                        />
 
                     <ImageView
-                        android:id="@+id/h6"
+                        android:id="@+id/deck_6player"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/empty" />
+                        app:srcCompat="@drawable/empty"
+                        android:onClick="selectCard"
+                        />
 
                     <ImageView
-                        android:id="@+id/h7"
+                        android:id="@+id/deck_7player"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/empty" />
+                        app:srcCompat="@drawable/empty"
+                        android:onClick="selectCard"
+                        />
 
                     <LinearLayout
                         android:layout_height="100dp"

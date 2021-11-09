@@ -2,9 +2,8 @@ package m.lou.rrr5;
 
 import static android.provider.Settings.System.getString;
 
-import static androidx.core.graphics.drawable.IconCompat.getResources;
-
 import android.app.Application;
+import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -37,6 +36,7 @@ public class Card  {
             default:
                 this.prop.setImageResource(R.drawable.empty);
         }
+
     }
 
     public void setPosition(String position) {
@@ -56,14 +56,5 @@ public class Card  {
         return position;
     }
 
-    //METHODS
-    public void moveCard(String position){
-//TODO
-
-        /*           //                              //
-        MainActivity.h0.setImageResource(R.drawable.king);break;*/
-
-
-}
 
 }

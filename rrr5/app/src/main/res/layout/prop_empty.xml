@@ -1,22 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="1dp"
-    android:orientation="vertical"
-    >
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
     <ImageView
-        android:id="@+id/card"
+        android:contentDescription="emptySpot"
+        android:id="@+id/emptySpot"
         android:layout_width="55dp"
         android:layout_height="75dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
-        android:scaleType="fitXY"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/empty" />
+        android:src="@drawable/empty" >
+    </ImageView>
+
 </LinearLayout>
 
-
-
-
+    <!--<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="1dp"
+        android:orientation="vertical"
+        >
+        <ImageView
+            android:id="@+id/card"
+            android:layout_width="55dp"
+            android:layout_height="75dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:scaleType="fitXY"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/empty" />
+    </LinearLayout>-->
 
