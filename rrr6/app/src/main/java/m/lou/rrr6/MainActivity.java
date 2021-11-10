@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         TypedArray imgs = getResources().obtainTypedArray(R.array.image_ids);
         for (int i = 0; i < 9; i++) {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(0, -1));
-            boardCardItems.add(defaultEmptyCard);
+            boardCardItems.add(new CardItem(bitmap));
         }
         return boardCardItems;
     }
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         TypedArray imgs = getResources().obtainTypedArray(R.array.image_ids);
         for (int i = 1; i < 9; i++) {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i, -1));
-            handCardItems.add(new CardItem(bitmap/*, "Image#" + i*/));
+            handCardItems.add(new CardItem(bitmap));
         }
         return handCardItems;
     }
@@ -104,13 +104,12 @@ public class MainActivity extends AppCompatActivity {
 
             for (int i = 0; i < 5; i++) {
                 @SuppressLint("ResourceType") Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(8, -1));
-                neutralCardItems.add(new CardItem(bitmap/*, "Image#" + i*/));
+                neutralCardItems.add(new CardItem(bitmap));
             }
         return neutralCardItems;
     }
 
     //CARD ACTIONS
-
     /**
      * @param view card view
      * @param i number of the card in ArrayList<CardItem> handCardItems
@@ -136,10 +135,5 @@ public class MainActivity extends AppCompatActivity {
             boardGridAdapter.notifyDataSetChanged();
             this.selectedCard = null;
         }
-
     }
-
-
-
-
 }

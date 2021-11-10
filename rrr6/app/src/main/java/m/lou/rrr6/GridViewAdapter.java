@@ -40,7 +40,6 @@ public class GridViewAdapter extends ArrayAdapter {
         }
 
         CardItem item = (CardItem) data.get(position);
-/*        holder.imageTitle.setText(item.getTitle());*/
         holder.image.setImageBitmap(item.getImage());
         return row;
     }
