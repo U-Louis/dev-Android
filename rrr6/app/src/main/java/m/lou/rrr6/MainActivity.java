@@ -1,6 +1,8 @@
 package m.lou.rrr6;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -14,20 +16,22 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private ArrayList<CardItem> boardCardItems = new ArrayList<>();
+    private final ArrayList<CardItem> boardCardItems = new ArrayList<>();
     private GridView boardView;
     private GridViewAdapter boardGridAdapter;
 
-    private  ArrayList<CardItem> handCardItems = new ArrayList<>();
+    private final ArrayList<CardItem> handCardItems = new ArrayList<>();
     private GridView handView;
     private GridViewAdapter handGridAdapter;
 
-    private ArrayList<CardItem> neutralCardItems = new ArrayList<>();
+    private final ArrayList<CardItem> neutralCardItems = new ArrayList<>();
     private GridView neutralsView;
     private GridViewAdapter neutralsGridAdapter;
 
-    public CardItem selectedCard;
+    public Integer selectedCard;
 
+    Bitmap emptyCardImg;
+    public CardItem defaultEmptyCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +42,11 @@ public class MainActivity extends AppCompatActivity {
         boardView = (GridView) findViewById(R.id.boardView);
         boardGridAdapter = new GridViewAdapter(this, R.layout.grid_item_layout, fillBoardGridAdapter());
         boardView.setAdapter(boardGridAdapter);
-/*        handView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        boardView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                putCard(view,  i, adapterView);
+                putCard(i);
             }
-        });*/
+        });
 
         handView = (GridView) findViewById(R.id.handView);
         handGridAdapter = new GridViewAdapter(this, R.layout.grid_item_layout, fillHandGridAdapter());
@@ -57,7 +61,11 @@ public class MainActivity extends AppCompatActivity {
         neutralsGridAdapter = new GridViewAdapter(this, R.layout.grid_item_layout, fillNeutralsGridAdapter());
         neutralsView.setAdapter(neutralsGridAdapter);
 
+        emptyCardImg = BitmapFactory.decodeResource(this.getResources(), R.drawable.image_0);
+        defaultEmptyCard = new CardItem(emptyCardImg);
+
     }
+
 
     // Fill board with empty spots
     private ArrayList<CardItem> fillBoardGridAdapter() {
@@ -84,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         TypedArray imgs = getResources().obtainTypedArray(R.array.image_ids);
             //TODO : random neutral cards
             for (int i = 0; i < 5; i++) {
-                Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(8, -1));
+                @SuppressLint("ResourceType") Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(8, -1));
                 neutralCardItems.add(new CardItem(bitmap/*, "Image#" + i*/));
             }
         return neutralCardItems;
@@ -92,20 +100,29 @@ public class MainActivity extends AppCompatActivity {
 
     //card actions
     public void setSelectedCard(View view, Integer i, AdapterView<?> adapterView) {
-        this.selectedCard = (CardItem) adapterView.getItemAtPosition(i);
-Toast.makeText(this, "hello", Toast.LENGTH_LONG).show();
-Log.i("log", String.valueOf(selectedCard));
+        this.selectedCard = i;
+        //this.selectedCard = (CardItem) adapterView.getItemAtPosition(i);
+//Toast.makeText(this, "hello", Toast.LENGTH_LONG).show();
+//Log.i("log", "selected card : " +String.valueOf(selectedCard));
 
     }
 
-    public void putCard(View view, Integer i, AdapterView<?> adapterView){
-/*
-        spot = String.valueOf(i);
-        spot = this.selectedCard;
-*/
+    public void putCard(Integer i){
+        if(this.selectedCard !=null){
 
+//Log.i("log", "targeted card : " +String.valueOf(i));
 
-        this.selectedCard = null;
+            boardCardItems.set(i, handCardItems.get(this.selectedCard));
+            handCardItems.set(this.selectedCard, defaultEmptyCard);
+            handGridAdapter.notifyDataSetChanged();
+            boardGridAdapter.notifyDataSetChanged();
+
+            this.selectedCard = null;
+
+//Log.i("log", "boardCardItems : " +String.valueOf(boardCardItems));
+//Log.i("log", "handCardItems : " +String.valueOf(handCardItems));
+        }
+
     }
 
 
