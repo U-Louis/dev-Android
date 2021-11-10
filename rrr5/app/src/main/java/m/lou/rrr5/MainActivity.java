@@ -2,17 +2,20 @@ package m.lou.rrr5;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.util.Log;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.PopupMenu;
@@ -22,10 +25,11 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends ListActivity implements PopupMenu.OnMenuItemClickListener {
+public class MainActivity extends AppCompatActivity  implements PopupMenu.OnMenuItemClickListener {
 
     public View selectedCard;
 
+/*
     //VIEW BOARD
     ImageView view_0board;
     ImageView view_1board;
@@ -60,7 +64,21 @@ public class MainActivity extends ListActivity implements PopupMenu.OnMenuItemCl
     List<Card> deck_blue = new ArrayList<Card>();
     List<Card> deck_red = new ArrayList<Card>();
     List<Card> deck_discard = new ArrayList<Card>();
+*/
 
+    GridView boardGrid;
+    ImageView prop_empty;
+    String [] cardNames = new String[]{
+            "empty",
+            "king",
+            "queen",
+            "princess",
+            "minister",
+            "sorcerer",
+            "general",
+            "castle",
+            "citizen"
+    };
 
     //+++ON CREATE+++
     //
@@ -68,31 +86,29 @@ public class MainActivity extends ListActivity implements PopupMenu.OnMenuItemCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        boardGrid = findViewById(R.id.gridView);
+        prop_empty = findViewById(R.id.deck_0board);
+Log.i("rerere", String.valueOf(prop_empty)+" "+ String.valueOf(R.id.emptySpot));
+
+        final ArrayAdapter adapter = new ArrayAdapter(
+                this, R.layout.prop_empty, R.id.emptySpot, cardNames );
+        boardGrid.setAdapter(adapter);
+/*
         initImageViews();
         initCards();
+*/
 
-        String [] values = new String[]{
-                "empty",
-                "king",
-                "queen",
-                "princess",
-                "minister",
-                "sorcerer",
-                "general",
-                "castle",
-                "citizen"
-        };
 
-        SpotAdapter adaptateur = new SpotAdapter(this, values);
-        setListAdapter(adaptateur);
+
+/*        SpotAdapter adaptateur = new SpotAdapter(this,  cardNames);
+        setListAdapter(adaptateur);*/
     }
 
-    @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         Toast.makeText(this, "Position : " + position, Toast.LENGTH_LONG).show();
     }
 
-    private void initImageViews() {
+/*    private void initImageViews() {
         this.view_0board = findViewById(R.id.deck_0board);
         this.view_1board = findViewById(R.id.deck_1board);
         this.view_2board = findViewById(R.id.deck_2board);
@@ -117,10 +133,12 @@ public class MainActivity extends ListActivity implements PopupMenu.OnMenuItemCl
         this.view_2neutrals = findViewById(R.id.deck_2neutrals);
         this.view_3neutrals = findViewById(R.id.deck_3neutrals);
         this.view_4neutrals = findViewById(R.id.deck_4neutrals);
-    }
+    }*/
 
     private void initCards() {
+/*
         deck_blue.add(new Card("king", "p1h0"));
+*/
     }
     //---ON CREATE---
 

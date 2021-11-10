@@ -29,10 +29,9 @@ public class SpotAdapter extends ArrayAdapter<String> {
                     getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
             View rowView = inflater.inflate(R.layout.prop_empty, parent, false);
-Log.i("imgview", String.valueOf(rowView));
-            //TextView textView = (TextView) rowView.findViewById(R.id.label);
+//Log.i("imgview", String.valueOf(rowView));
             ImageView imageView = (ImageView) rowView.findViewById(R.id.emptySpot);
- Log.i("imgview", String.valueOf(imageView));
+//Log.i("imgview", String.valueOf(imageView));
 
             //textView.setText(getItem(position));
 

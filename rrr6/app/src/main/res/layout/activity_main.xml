@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/bg">
+
+
+<!-- GLOBAL FRAME -->
+<LinearLayout
+    android:id="@+id/global_frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100">
+
+
+    <!-- BOARD -->
+    <LinearLayout
+        android:id="@+id/frame_board"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="50"
+        android:fitsSystemWindows="true"
+        android:orientation="horizontal">
+
+        <!-- BOARD_side -->
+        <LinearLayout
+            android:id="@+id/frame_board_side"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:orientation="vertical"
+            android:padding="3dp"
+            android:weightSum="100">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="250sp"
+                android:layout_weight="30"
+                android:text="M\ne\nn\nu"
+                tools:ignore="NestedWeights"
+                android:onClick="showMenu"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="70"
+                android:src="@drawable/discard" />
+
+        </LinearLayout>
+
+        <!-- BOARD_arena -->
+        <LinearLayout
+            android:id="@+id/frame_board_arena"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="75"
+            android:orientation="vertical"
+            android:padding="3dp"
+            >
+
+            <GridView
+                android:id="@+id/gridView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:drawSelectorOnTop="true"
+                android:gravity="center"
+                android:numColumns="3"
+                android:stretchMode="columnWidth"
+                android:focusable="true"
+                android:clickable="true"
+/>
+
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <!-- HAND -->
+    <LinearLayout
+        android:id="@+id/frame_hand"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"
+        android:layout_weight="50"
+        android:orientation="vertical"
+        android:weightSum="3">
+
+        <!-- HAND_neutrals -->
+        <LinearLayout
+            android:id="@+id/hand_neutral"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingVertical="5dp"
+            android:weightSum="5">
+
+            <ImageView
+                android:id="@+id/deck_0neutrals"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/image_0"
+                android:onClick="selectCard"
+                />
+
+            <ImageView
+                android:id="@+id/deck_1neutrals"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/image_0"
+                android:onClick="selectCard"
+                />
+
+            <ImageView
+                android:id="@+id/deck_2neutrals"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/image_0"
+                android:onClick="selectCard"
+                />
+
+            <ImageView
+                android:id="@+id/deck_3neutrals"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/image_0"
+                android:onClick="selectCard"
+                />
+
+            <ImageView
+                android:id="@+id/deck_4neutrals"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/image_0"
+                android:onClick="selectCard"
+                />
+        </LinearLayout>
+
+        <!-- HAND PLAYER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:paddingVertical="5dp"
+
+            android:weightSum="2">
+
+            <!-- Hand player topline -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <ImageView
+                    android:id="@+id/deck_0player"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/image_0"
+                    android:onClick="selectCard"
+                    />
+
+                <ImageView
+                    android:id="@+id/deck_1player"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/image_0"
+                    android:onClick="selectCard"
+                    />
+
+                <ImageView
+                    android:id="@+id/deck_2player"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/image_0"
+                    android:onClick="selectCard"
+                    />
+
+                <ImageView
+                    android:id="@+id/deck_3player"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/image_0"
+                    android:onClick="selectCard"
+                    />
+
+                <ImageView
+                    android:id="@+id/deck_4player"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/image_0"
+                    android:onClick="selectCard"
+                    />
+            </LinearLayout>
+
+            <!-- Hand player botline -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <ImageView
+                    android:id="@+id/deck_5player"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/image_0"
+                    android:onClick="selectCard"
+                    />
+
+                <ImageView
+                    android:id="@+id/deck_6player"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/image_0"
+                    android:onClick="selectCard"
+                    />
+
+                <ImageView
+                    android:id="@+id/deck_7player"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/image_0"
+                    android:onClick="selectCard"
+                    />
+
+                <LinearLayout
+                    android:layout_height="100dp"
+                    android:layout_width="0dp"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="2"
+                    android:padding="5dp">
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="NEXT"
+                        tools:ignore="NestedWeights" />
+
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+</RelativeLayout>
