@@ -40,8 +40,8 @@ android:background="@drawable/bg">
                 android:layout_height="250sp"
                 android:layout_weight="30"
                 android:text="M\ne\nn\nu"
-                tools:ignore="NestedWeights"
-                android:onClick="showMenu"/>
+                tools:ignore="NestedWeights"/>
+               <!-- android:onClick="showMenu"-->
 
             <ImageView
                 android:layout_width="match_parent"
@@ -63,7 +63,7 @@ android:background="@drawable/bg">
             >
 
             <GridView
-                android:id="@+id/gridView"
+                android:id="@+id/boardView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="5dp"
@@ -99,52 +99,19 @@ android:background="@drawable/bg">
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal"
-            android:paddingVertical="5dp"
             android:weightSum="5">
 
-            <ImageView
-                android:id="@+id/deck_0neutrals"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/image_0"
-                android:onClick="selectCard"
-                />
-
-            <ImageView
-                android:id="@+id/deck_1neutrals"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/image_0"
-                android:onClick="selectCard"
-                />
-
-            <ImageView
-                android:id="@+id/deck_2neutrals"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/image_0"
-                android:onClick="selectCard"
-                />
-
-            <ImageView
-                android:id="@+id/deck_3neutrals"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/image_0"
-                android:onClick="selectCard"
-                />
-
-            <ImageView
-                android:id="@+id/deck_4neutrals"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/image_0"
-                android:onClick="selectCard"
+            <GridView
+                android:id="@+id/neutralsView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="2dp"
+                android:drawSelectorOnTop="true"
+                android:gravity="center"
+                android:numColumns="5"
+                android:stretchMode="columnWidth"
+                android:focusable="true"
+                android:clickable="true"
                 />
         </LinearLayout>
 
@@ -155,110 +122,30 @@ android:background="@drawable/bg">
             android:layout_gravity="bottom"
             android:layout_weight="2"
             android:orientation="vertical"
-            android:paddingVertical="5dp"
+            >
 
-            android:weightSum="2">
+        <GridView
+            android:id="@+id/handView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="2dp"
+            android:drawSelectorOnTop="true"
+            android:gravity="center"
+            android:numColumns="5"
+            android:stretchMode="columnWidth"
+            android:focusable="true"
+            android:clickable="true"
+            />
+        </LinearLayout>
 
-            <!-- Hand player topline -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:weightSum="5">
 
-                <ImageView
-                    android:id="@+id/deck_0player"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/image_0"
-                    android:onClick="selectCard"
-                    />
 
-                <ImageView
-                    android:id="@+id/deck_1player"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/image_0"
-                    android:onClick="selectCard"
-                    />
 
-                <ImageView
-                    android:id="@+id/deck_2player"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/image_0"
-                    android:onClick="selectCard"
-                    />
-
-                <ImageView
-                    android:id="@+id/deck_3player"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/image_0"
-                    android:onClick="selectCard"
-                    />
-
-                <ImageView
-                    android:id="@+id/deck_4player"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/image_0"
-                    android:onClick="selectCard"
-                    />
-            </LinearLayout>
-
-            <!-- Hand player botline -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:weightSum="5">
-
-                <ImageView
-                    android:id="@+id/deck_5player"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/image_0"
-                    android:onClick="selectCard"
-                    />
-
-                <ImageView
-                    android:id="@+id/deck_6player"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/image_0"
-                    android:onClick="selectCard"
-                    />
-
-                <ImageView
-                    android:id="@+id/deck_7player"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/image_0"
-                    android:onClick="selectCard"
-                    />
-
-                <LinearLayout
-                    android:layout_height="100dp"
-                    android:layout_width="0dp"
-                    android:layout_gravity="bottom"
-                    android:layout_weight="2"
-                    android:padding="5dp">
-                    <Button
+<!--                    <Button
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="NEXT"
-                        tools:ignore="NestedWeights" />
+                        tools:ignore="NestedWeights" />-->
 
 
 
@@ -266,7 +153,4 @@ android:background="@drawable/bg">
 
 
             </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
-</LinearLayout>
 </RelativeLayout>

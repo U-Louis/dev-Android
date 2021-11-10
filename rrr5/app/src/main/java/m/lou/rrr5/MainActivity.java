@@ -69,15 +69,15 @@ public class MainActivity extends AppCompatActivity  implements PopupMenu.OnMenu
     GridView boardGrid;
     ImageView prop_empty;
     String [] cardNames = new String[]{
-            "empty",
-            "king",
-            "queen",
-            "princess",
-            "minister",
-            "sorcerer",
-            "general",
-            "castle",
-            "citizen"
+            "0empty",
+            "1king",
+            "2queen",
+            "3princess",
+            "4minister",
+            "5sorcerer",
+            "6general",
+            "7castle",
+            "8citizen"
     };
 
     //+++ON CREATE+++
