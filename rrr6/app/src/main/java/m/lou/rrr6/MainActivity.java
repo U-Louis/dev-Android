@@ -14,10 +14,15 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    private ArrayList<CardItem> boardCardItems = new ArrayList<>();
     private GridView boardView;
     private GridViewAdapter boardGridAdapter;
+
+    private  ArrayList<CardItem> handCardItems = new ArrayList<>();
     private GridView handView;
     private GridViewAdapter handGridAdapter;
+
+    private ArrayList<CardItem> neutralCardItems = new ArrayList<>();
     private GridView neutralsView;
     private GridViewAdapter neutralsGridAdapter;
 
@@ -33,6 +38,11 @@ public class MainActivity extends AppCompatActivity {
         boardView = (GridView) findViewById(R.id.boardView);
         boardGridAdapter = new GridViewAdapter(this, R.layout.grid_item_layout, fillBoardGridAdapter());
         boardView.setAdapter(boardGridAdapter);
+/*        handView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                putCard(view,  i, adapterView);
+            }
+        });*/
 
         handView = (GridView) findViewById(R.id.handView);
         handGridAdapter = new GridViewAdapter(this, R.layout.grid_item_layout, fillHandGridAdapter());
@@ -51,38 +61,33 @@ public class MainActivity extends AppCompatActivity {
 
     // Fill board with empty spots
     private ArrayList<CardItem> fillBoardGridAdapter() {
-        final ArrayList<CardItem> cardItems = new ArrayList<>();
         TypedArray imgs = getResources().obtainTypedArray(R.array.image_ids);
         for (int i = 0; i < 9; i++) {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(0, -1));
-           cardItems.add(new CardItem(bitmap/*, "Image#" + i*/));
+            boardCardItems.add(new CardItem(bitmap/*, "Image#" + i*/));
         }
-        return cardItems;
+        return boardCardItems;
     }
 
     // Fill hand with starting cards
     private ArrayList<CardItem> fillHandGridAdapter() {
-        final ArrayList<CardItem> cardItems = new ArrayList<>();
         TypedArray imgs = getResources().obtainTypedArray(R.array.image_ids);
         for (int i = 1; i < 9; i++) {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i, -1));
-            cardItems.add(new CardItem(bitmap/*, "Image#" + i*/));
+            handCardItems.add(new CardItem(bitmap/*, "Image#" + i*/));
         }
-        return cardItems;
+        return handCardItems;
     }
 
     // Fill neutrals with random neutral cards
     private ArrayList<CardItem> fillNeutralsGridAdapter() {
-        final ArrayList<CardItem> cardItems = new ArrayList<>();
         TypedArray imgs = getResources().obtainTypedArray(R.array.image_ids);
-
             //TODO : random neutral cards
             for (int i = 0; i < 5; i++) {
                 Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(8, -1));
-                cardItems.add(new CardItem(bitmap/*, "Image#" + i*/));
+                neutralCardItems.add(new CardItem(bitmap/*, "Image#" + i*/));
             }
-
-        return cardItems;
+        return neutralCardItems;
     }
 
     //card actions
@@ -91,6 +96,16 @@ public class MainActivity extends AppCompatActivity {
 Toast.makeText(this, "hello", Toast.LENGTH_LONG).show();
 Log.i("log", String.valueOf(selectedCard));
 
+    }
+
+    public void putCard(View view, Integer i, AdapterView<?> adapterView){
+/*
+        spot = String.valueOf(i);
+        spot = this.selectedCard;
+*/
+
+
+        this.selectedCard = null;
     }
 
 
